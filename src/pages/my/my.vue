@@ -19,7 +19,7 @@ const sentRequest = async () => {
     <button
       @tap="
         memberStore.setProfile({
-          nickname: '黑马先锋',
+          nickname: 'PetAIRoot',
           token: '12345',
         })
       "
