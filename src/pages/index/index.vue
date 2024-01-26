@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import CustomNavbar from './componts/CustomNavbar.vue'
-import CategoryPanel from './componts/CategoryPanel.vue'
 import { getHomeBannerAPI } from '@/services/home'
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import type { BannerItem } from '@/types/home'
-import HotPanel from './componts/HotPanel.vue'
 import type { PetAiGuessInstance } from '@/types/component'
-import PageSkeleton from './componts/PageSkeleton.vue'
+import PetProfiles from './componts/PetProfiles.vue'
+import Function from './componts/Function.vue'
+import Function2 from './componts/Function2.vue'
+import RecommendGoods from './componts/SuggesstionGoods.vue'
 
 // 通过封装在ts文件中的API来获取轮播图数据
 const bannerList = ref<BannerItem[]>([])
@@ -18,11 +19,6 @@ const getHomeBannerData = async () => {
 }
 
 const guessRef = ref<PetAiGuessInstance>()
-// 下拉触底
-const onScrolltolower = () => {
-  // console.log('触底了！')
-  guessRef.value?.getMore()
-}
 // 下拉刷新
 const isRefresher = ref(false)
 // 自定义下拉刷新被触发
@@ -58,33 +54,25 @@ onLoad(async () => {
   <!-- 自定义导航栏 -->
   <CustomNavbar />
   <!-- <image src="@/static/icon/圣诞冰淇淋.png" mode="scaleToFill" /> -->
-  <!-- 滚动容器 -->
-  <scroll-view
-    refresher-enabled
-    @refresherrefresh="onRefresherrefresh"
-    :refresher-triggered="isRefresher"
-    @scrolltolower="onScrolltolower"
-    scroll-y
-  >
-    <!-- 定义骨架屏 -->
-    <PageSkeleton v-if="isLoading" />
-    <template v-else>
-      <!-- 轮播图 -->
-      <PetAiSwiper :list="bannerList" />
-      <!-- 猜你喜欢 -->
-      <PetAiGuess ref="guessRef" />
-    </template>
-  </scroll-view>
+  <!-- 定义骨架屏
+    <PageSkeleton v-if="isLoading" /> -->
+  <!-- 轮播图 -->
+  <!-- <PetAiSwiper :list="bannerList" /> -->
+  <!-- 板块 -->
+  <PetProfiles></PetProfiles>
+  <Function></Function>
+  <Function2></Function2>
+  <!-- 猜你喜欢 -->
+  <!-- <PetAiGuess ref="guessRef" /> -->
+  <!-- 推荐 -->
+  <RecommendGoods></RecommendGoods>
 </template>
 
 <style lang="scss">
 page {
-  background-color: #efefef;
+  background-color: rgb(224, 224, 224);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.scroll-view {
-  flex: 1;
+  // display: flex;
+  // flex-direction: column;
 }
 </style>

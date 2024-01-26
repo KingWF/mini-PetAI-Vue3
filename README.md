@@ -7,5 +7,5 @@ npm i @dcloudio/uni-ui
 安装类型声明文件
 npm i -D @uni-helper/uni-ui-types
 
-安装持久化存储插件： pinia-plugin-persistedstate
+安装持久化存储插件： 
 npm i pinia-plugin-persistedstate

@@ -1,5 +1,5 @@
 import type { PageParams, PageResult } from '@/types/global'
-import type { BannerItem, GuessItem } from '@/types/home'
+import type { BannerItem, GuessItem, RecommendGoodsItem, RecommendList } from '@/types/home'
 import { http } from '@/utils/http'
 
 /**
@@ -23,6 +23,19 @@ export const getHomeGoodsGuessLikeAPI = (data?: PageParams) => {
   return http<PageResult<GuessItem>>({
     method: 'GET',
     url: '/home/goods/guessLike',
+    data,
+  })
+}
+/**
+ * 获取推荐数据
+ */
+type RecommendParams = PageParams & {
+  subType?: number
+}
+export const getRecommendGoodsAPI = (data?: RecommendParams) => {
+  return http<RecommendList>({
+    method: 'GET',
+    url: '/home/getRecommendGoods',
     data,
   })
 }

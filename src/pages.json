@@ -1,90 +1,165 @@
 {
-	// 配置组件自动引入的规则
-	"easycom": {
-		// 是否开启自动扫描
-		"autoscan": true,
-		// 以正则表达式方式自定义组件匹配的规则
-		"custom": {
-			// uni-ui 规则如下配置
-			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-			// 将通用组件库中的组件按照PetAI开头的格式导入
-			"^PetAi(.*)": "@/components/PetAi$1.vue"
-		}
-	},
-	"pages": [
-		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				// 导航栏样式:隐藏系统自带顶部导航栏
-				"navigationStyle": "custom",
-				// 导航栏标题颜色和状态栏前景颜色
-				"navigationBarTextStyle": "white",
-				"navigationBarTitleText": "首页"
-			}
-		},
-		{
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "我的"
-			}
-		},
-		{
-			"path": "pages/cart/cart",
-			"style": {
-				"navigationBarTitleText": "购物车"
-			}
-		},
-		{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "登录"
-			}
-		},
+  // 配置组件自动引入的规则
+  "easycom": {
+    // 是否开启自动扫描
+    "autoscan": true,
+    // 以正则表达式方式自定义组件匹配的规则
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      // 将通用组件库中的组件按照PetAI开头的格式导入
+      "^PetAi(.*)": "@/components/PetAi$1.vue"
+    }
+  },
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/category/category",
+      "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "分类"
+        // 导航栏样式:隐藏系统自带顶部导航栏
+        "navigationStyle": "custom",
+        // 导航栏标题颜色和状态栏前景颜色
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        // 导航栏样式:隐藏系统自带顶部导航栏
+        "navigationStyle": "custom",
+        // 导航栏标题颜色和状态栏前景颜色
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/base/base",
+      "style": {
+        "navigationBarTitleText": "宠物基地"
+      }
+    },
+    {
+      "path": "pages/community/community",
+      "style": {
+        "navigationBarTitleText": "社区"
+      }
+    },
+    {
+      "path": "pages/index/homePetMess/PetIdentification/PetIdentification",
+      "style": {
+        "navigationBarTitleText": "宠物识别"
+      }
+    },
+    {
+      "path": "pages/index/homePetMess/SentimentAnalysis/SentimentAnalysis",
+      "style": {
+        "navigationBarTitleText": "宠物情绪分析"
+      }
+    },
+    {
+      "path": "pages/index/homePetMess/AddPetMess/AddPetMess",
+      "style": {
+        "navigationBarTitleText": "添加宠物信息"
+      }
+    },
+    {
+      "path": "pages/index/homePetMess/SetPetMess/SetPetMess",
+      "style": {
+        "navigationBarTitleText": "修改宠物信息"
+      }
+    },
+    {
+      "path": "pages/index/homePetMess/getMorePetMess/getMorePetMess",
+      "style": {
+        "navigationBarTitleText": "宠物档案室"
+      }
+    },
+    {
+      "path": "pages/my/components/ShoppingCart",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/my/components/MyOrder",
+      "style": {
+        "navigationBarTitleText": "我的订单"
+      }
+    },
+    {
+      "path": "pages/my/components/MyPrivacy",
+      "style": {
+        "navigationBarTitleText": "我的隐私"
+      }
+    },
+    {
+      "path": "pages/my/components/Business",
+      "style": {
+        "navigationBarTitleText": "商家注册"
+      }
+    },
+    {
+      "path": "pages/my/components/EditInformation",
+      "style": {
+        // 导航栏样式:隐藏系统自带顶部导航栏
+        "navigationStyle": "custom",
+        // 导航栏标题颜色和状态栏前景颜色
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "编辑"
+      }
+    },
+    {
+      "path": "pages/community/components/add",
+      "style": {
+        "navigationBarTitleText": "发布",
+        "enablePullDownRefresh": true
       }
     }
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	// 设置 TabBar
-	"tabBar": {
-		"color": "#333",
-		"selectedColor": "#27ba9b",
-		"backgroundColor": "#fff",
-		"borderStyle": "white",
-		"list": [
-			{
-				"text": "首页",
-				"pagePath": "pages/index/index",
-				"iconPath": "static/tabs/home_default.png",
-				"selectedIconPath": "static/tabs/home_selected.png"
-			},
-			{
-				"text": "分类",
-				"pagePath": "pages/category/category",
-				"iconPath": "static/tabs/category_default.png",
-				"selectedIconPath": "static/tabs/category_selected.png"
-			},
-			{
-				"text": "购物车",
-				"pagePath": "pages/cart/cart",
-				"iconPath": "static/tabs/cart_default.png",
-				"selectedIconPath": "static/tabs/cart_selected.png"
-			},
-			{
-				"text": "我的",
-				"pagePath": "pages/my/my",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
-			}
-		]
-	}
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  // 设置 TabBar
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#27ba9b",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/首页-置灰.png",
+        "selectedIconPath": "static/tabs/首页-置灰 (1).png"
+      },
+      {
+        "text": "社区",
+        "pagePath": "pages/community/community",
+        "iconPath": "static/tabs/社区.png",
+        "selectedIconPath": "static/tabs/社区 (1).png"
+      },
+      {
+        "text": "宠物基地",
+        "pagePath": "pages/base/base",
+        "iconPath": "static/tabs/宠物-copy.png",
+        "selectedIconPath": "static/tabs/宠物-copy (1).png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabs/我的.png",
+        "selectedIconPath": "static/tabs/我的 (1).png"
+      }
+    ]
+  }
 }

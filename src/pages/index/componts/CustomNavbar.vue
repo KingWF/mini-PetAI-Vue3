@@ -6,10 +6,10 @@
       <text class="logo-text">一站式智能宠物管理平台</text>
     </view>
     <!-- 搜索条 -->
-    <view class="search">
+    <!-- <view class="search">
       <text class="icon-search">搜索资讯</text>
       <text class="icon-scan"></text>
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -23,6 +23,7 @@ console.log(safeAreaInsets)
 /* 自定义导航条 */
 .navbar {
   background-image: url(@/static/images/navigator_bg.png);
+  height: 160rpx;
   background-size: cover;
   position: relative;
   display: flex;
@@ -32,8 +33,9 @@ console.log(safeAreaInsets)
     display: flex;
     align-items: center;
     height: 64rpx;
-    padding-left: 30rpx;
+    padding-left: 20rpx;
     padding-top: 20rpx;
+    padding-bottom: 20rpx;
     .logo-image {
       width: 166rpx;
       height: 39rpx;
@@ -47,27 +49,6 @@ console.log(safeAreaInsets)
       border-left: 1rpx solid #fff;
       font-size: 26rpx;
     }
-  }
-  .search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10rpx 0 26rpx;
-    height: 64rpx;
-    margin: 16rpx 20rpx;
-    color: #fff;
-    font-size: 28rpx;
-    border-radius: 32rpx;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  .icon-search {
-    &::before {
-      margin-right: 10rpx;
-    }
-  }
-  .icon-scan {
-    font-size: 30rpx;
-    padding: 15rpx;
   }
 }
 </style>

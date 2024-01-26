@@ -49,8 +49,9 @@ defineExpose({
 
 <template>
   <!-- 猜你喜欢 -->
-  <view class="caption">
-    <text class="text">猜你喜欢</text>
+  <view class="search">
+    <text class="icon-search">搜索商品</text>
+    <text class="icon-scan"></text>
   </view>
   <view class="guess">
     <navigator
@@ -146,5 +147,17 @@ defineExpose({
   font-size: 28rpx;
   color: #666;
   padding: 20rpx 0;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10rpx 0 26rpx;
+  height: 64rpx;
+  margin: 16rpx 20rpx;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 32rpx;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 </style>
